@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
+
+import Nav from './components/Nav';
+import Users from './components/Users';
+import Messages from './components/Messages';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>React App - Apollo Client</h1>
+      <h3>Connected to Yoga-Prisma Back End with PostgresQL database</h3>
+      <Nav />
+      <Route path='/users' component={Users} />
+      <Route path='/messages' component={Messages} />
     </div>
   );
 }
